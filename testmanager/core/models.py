@@ -14,8 +14,8 @@ class PersonQuerySet(QuerySet):
 class Person(models.Model):
     name = models.CharField(max_length=100, null=True)
     slug = models.CharField(max_length=10, null=True)
-    country = models.ForeignKey(Country, blank=True, null=True, related_name='persons')
+    country = models.ForeignKey(
+        Country, blank=True, null=True, related_name='persons'
+    )
 
     objects = PersonQuerySet.as_manager()
-
-
